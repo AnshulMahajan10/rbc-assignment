@@ -50,19 +50,19 @@ router.route("/JSON").get((req, res) => {
 
   if (req.query.selectedField === 'phonenumber') {
     const tempres = jsonData.filter(record => (record.devices.phone === req.query.searchValue && record.originationTime >= req.query.startDate && record.originationTime <= req.query.endDate));
-    res.json(tempres);
+    res.json(tempres).status(200);
   }
   else if (req.query.selectedField === 'voicemail') {
     const tempres = jsonData.filter(record => (record.devices.voicemail === req.query.searchValue && record.originationTime >= req.query.startDate && record.originationTime <= req.query.endDate));
-    res.json(tempres);
+    res.json(tempres).status(200);
   }
   else if (req.query.selectedField === 'clusterId') {
     const tempres = jsonData.filter(record => (record.clusterId === req.query.searchValue && record.originationTime >= req.query.startDate && record.originationTime <= req.query.endDate));
-    res.json(tempres);
+    res.json(tempres).status(200);
   }
   else if (req.query.selectedField === 'userId') {
     const tempres = jsonData.filter(record => (record.userId === req.query.searchValue && record.originationTime >= req.query.startDate && record.originationTime <= req.query.endDate));
-    res.json(tempres);
+    res.json(tempres).status(200);
   }
 });
 
