@@ -6,21 +6,20 @@ const Router = require("./routes/routes");
 const mongoose = require("mongoose");
 const dbConfig = require("./config/config.js");
 
-
-
 const db =
-dbConfig.mongoUrl;
+  dbConfig.mongoUrl;
 mongoose
   .connect(db)
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
+
 app.use("/api", Router);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello!");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });

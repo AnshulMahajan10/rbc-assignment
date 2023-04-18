@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 
 function App() {
- 
+
   const [backendData, setBackendData] = useState([{}]);
   const [isLoading, setIsLoading] = useState(false);
   const [showTable, setShowTable] = useState(false);
@@ -22,12 +22,11 @@ function App() {
 
   const callApi = (startDate, endDate, selectedField, input) => {
     setIsLoading(true);
-     const searchType = 'JSON';
+    const searchType = 'JSON';
     // const searchType = 'MONGO'
+    // const searchType = 'SQL';
     const page = 0;
-    setTimeout(() => {
 
-   
     fetch(`/api/${searchType}/?selectedField=${selectedField}&searchValue=${input}&startDate=${startDate}&endDate=${endDate}&page=${page}`).then(
       response => response.json()
     ).then(
@@ -37,7 +36,6 @@ function App() {
         setShowTable(true);
       }
     )
-  },3000)
   }
 
   const GoBack = () => {
@@ -50,27 +48,27 @@ function App() {
     <div className="App">
       {(isLoading) ? (
         <>
-       <Box className="box">
-      <CircularProgress />
-       </Box>
-       <GoBack/>
+          <Box className="box">
+            <CircularProgress />
+          </Box>
+          <GoBack />
         </>
       ) : (
         <>
-       <HomePageHeader />
-     
-       {(showTable) ? (
-         <>
-       <TableDisplay data={backendData}/>
-         <GoBack/>
-         </>
-       ) : ( 
-         <>
-          <SearchForm callApi={callApi}/>
-       </>)}
-       </>
-      )} 
-   
+          <HomePageHeader />
+
+          {(showTable) ? (
+            <>
+              <TableDisplay data={backendData} />
+              <GoBack />
+            </>
+          ) : (
+            <>
+              <SearchForm callApi={callApi} />
+            </>)}
+        </>
+      )}
+
     </div>
   );
 }

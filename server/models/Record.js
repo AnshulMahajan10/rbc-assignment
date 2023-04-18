@@ -6,9 +6,10 @@ let Record = new Schema({
   originationTime: { type: Number, required: true },
   clusterId: { type: String, required: true },
   userId: { type: String, required: true },
-  devices: { 
+  devices: {
     phone: String,
-    voicemail: String }
+    voicemail: String
+  }
 });
 
 const RecordModel = mongoose.model("Record", Record);

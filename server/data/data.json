@@ -68,5 +68,15 @@
   "phone": "023123234238",
   "voicemail": "555666777WVM"
 }
+},
+{
+  "_id": "12352",
+  "originationTime": "1682035200000",
+  "clusterId": "domainserver2",
+  "userId": "115666777",
+  "devices": {
+  "phone": "023123234238",
+  "voicemail": "555666777WVM"
+}
 }
   ]

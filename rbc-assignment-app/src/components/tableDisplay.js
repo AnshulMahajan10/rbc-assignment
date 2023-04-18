@@ -172,9 +172,8 @@ export const TableDisplay = (props) => {
   React.useEffect(() => {
 
     rows = [];
-    if(props.data && props.data[0])
-    {
-        populateRows(props);
+    if (props.data && props.data[0]) {
+      populateRows(props);
     }
     let rowsOnMount = stableSort(
       rows,
@@ -190,12 +189,12 @@ export const TableDisplay = (props) => {
   }, []);
 
   const populateRows = (props) => {
-     rows = [];
-      for(let x =0; x< props.data.length; x++){
-        const date= new Date(parseInt(props.data[x].originationTime));
-        const dateFormat = date.toDateString();
-          rows.push(createData(props.data[x]._id,dateFormat,props.data[x].clusterId,props.data[x].userId,props.data[x].devices.phone,props.data[x].devices.voicemail))
-      }
+    rows = [];
+    for (let x = 0; x < props.data.length; x++) {
+      const date = new Date(parseInt(props.data[x].originationTime));
+      const dateFormat = date.toDateString();
+      rows.push(createData(props.data[x]._id, dateFormat, props.data[x].clusterId, props.data[x].userId, props.data[x].devices.phone, props.data[x].devices.voicemail))
+    }
   }
 
   const handleRequestSort = React.useCallback(
@@ -262,86 +261,86 @@ export const TableDisplay = (props) => {
   };
 
   return (
-      <>
-    {(!props.data || !props.data[0] || !props.data[0]._id) ? (
+    <>
+      {(!props.data || !props.data[0] || !props.data[0]._id) ? (
         <p>No Records found...</p>
-      ): (
-    <Box sx={{ width: '100%' }}  className="tableContainer">
-      <Paper sx={{ width: '100%', mb: 2 }}>
-        <TableContainer>
-          <Table
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
-          >
-            <EnhancedTableHead
-              numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
-              onRequestSort={handleRequestSort}
-              rowCount={rows.length}
-            />
-            <TableBody>
-              {visibleRows
-                ? visibleRows.map((row, index) => {
-                    // const labelId = `enhanced-table-checkbox-${index}`;
+      ) : (
+        <Box sx={{ width: '100%' }} className="tableContainer">
+          <Paper sx={{ width: '100%', mb: 2 }}>
+            <TableContainer>
+              <Table
+                sx={{ minWidth: 750 }}
+                aria-labelledby="tableTitle"
+                size={dense ? 'small' : 'medium'}
+              >
+                <EnhancedTableHead
+                  numSelected={selected.length}
+                  order={order}
+                  orderBy={orderBy}
+                  onRequestSort={handleRequestSort}
+                  rowCount={rows.length}
+                />
+                <TableBody>
+                  {visibleRows
+                    ? visibleRows.map((row, index) => {
+                      // const labelId = `enhanced-table-checkbox-${index}`;
 
-                    return (
-                      <TableRow
-                        hover
-                        // role="checkbox"
-                        tabIndex={-1}
-                        key={row._id}
-                        sx={{ cursor: 'pointer' }}
-                      >
-                        <TableCell
-                          component="th"
-                          // id={labelId}
-                          scope="row"
-                          padding="none"
+                      return (
+                        <TableRow
+                          hover
+                          // role="checkbox"
+                          tabIndex={-1}
+                          key={row._id}
+                          sx={{ cursor: 'pointer' }}
                         >
-                          {row._id}
-                        </TableCell>
-                        <TableCell align="right">{ row.originationTime}</TableCell>
-                        <TableCell align="right">{row.clusterId}</TableCell>
-                        <TableCell align="right">{row.userId}</TableCell>
-                        <TableCell align="right">{row.phone}</TableCell>
-                        <TableCell align="right">{row.voicemail}</TableCell>
-                      </TableRow>
-                    );
-                  })
-                : null}
-              {paddingHeight > 0 && (
-                <TableRow
-                  style={{
-                    height: paddingHeight,
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </Paper>
-      {/* <FormControlLabel
+                          <TableCell
+                            component="th"
+                            // id={labelId}
+                            scope="row"
+                            padding="none"
+                          >
+                            {row._id}
+                          </TableCell>
+                          <TableCell align="right">{row.originationTime}</TableCell>
+                          <TableCell align="right">{row.clusterId}</TableCell>
+                          <TableCell align="right">{row.userId}</TableCell>
+                          <TableCell align="right">{row.phone}</TableCell>
+                          <TableCell align="right">{row.voicemail}</TableCell>
+                        </TableRow>
+                      );
+                    })
+                    : null}
+                  {paddingHeight > 0 && (
+                    <TableRow
+                      style={{
+                        height: paddingHeight,
+                      }}
+                    >
+                      <TableCell colSpan={6} />
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25]}
+              component="div"
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </Paper>
+          {/* <FormControlLabel
         control={<Switch checked={dense} onChange={handleChangeDense} />}
         label="Dense padding"
       /> */}
-      <CSVLink data={rows} headers={headers}>
-  Download as CSV
-</CSVLink>
-    </Box>
+          <CSVLink data={rows} headers={headers}>
+            Download as CSV
+          </CSVLink>
+        </Box>
       )}
-      </>
+    </>
   );
 }
