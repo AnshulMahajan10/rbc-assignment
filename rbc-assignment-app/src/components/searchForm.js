@@ -28,13 +28,13 @@ export const SearchForm = (props) => {
       alert('You must select field type to search');
     }
     else if (searchValue.length === 0 || !selectedField || !startDate || !endDate) {
-      alert('Please check empty fields');
+      alert('All fields must be filled out');
     }
     else if (endDate < startDate) {
       alert('End date can not be before start date')
     }
     else if (selectedField === 'phonenumber' && searchValue.length > 12) {
-      alert('Please check phone number')
+      alert('Please check phone number length')
     }
     else {
       props.callApi(new Date(startDate).getTime(), new Date(endDate).getTime(), selectedField, searchValue);
