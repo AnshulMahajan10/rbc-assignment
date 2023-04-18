@@ -70,19 +70,19 @@ const headCells = [
     id: 'originationTime',
     numeric: false,
     disablePadding: false,
-    label: 'originationTime',
+    label: 'OriginationTime',
   },
   {
     id: 'clusterId',
     numeric: true,
     disablePadding: false,
-    label: 'clusterId',
+    label: 'ClusterId',
   },
   {
     id: 'userId',
     numeric: true,
     disablePadding: false,
-    label: 'userId',
+    label: 'UserId',
   },
   {
     id: 'phone',
@@ -256,10 +256,6 @@ export const TableDisplay = (props) => {
     [order, orderBy],
   );
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
-  };
-
   return (
     <>
       {(!props.data || !props.data[0] || !props.data[0]._id) ? (
@@ -283,8 +279,7 @@ export const TableDisplay = (props) => {
                 <TableBody>
                   {visibleRows
                     ? visibleRows.map((row, index) => {
-                      // const labelId = `enhanced-table-checkbox-${index}`;
-
+                      
                       return (
                         <TableRow
                           hover
@@ -332,10 +327,7 @@ export const TableDisplay = (props) => {
               onRowsPerPageChange={handleChangeRowsPerPage}
             />
           </Paper>
-          {/* <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      /> */}
+      
           <CSVLink data={rows} headers={headers}>
             Download as CSV
           </CSVLink>

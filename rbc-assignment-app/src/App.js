@@ -20,14 +20,14 @@ function App() {
     setShowTable(false);
   }
 
-  const callApi = (startDate, endDate, selectedField, input) => {
+  const callApi = (startDate, endDate, selectedField, searchValue) => {
     setIsLoading(true);
     const searchType = 'JSON';
     // const searchType = 'MONGO'
     // const searchType = 'SQL';
     const page = 0;
 
-    fetch(`/api/${searchType}/?selectedField=${selectedField}&searchValue=${input}&startDate=${startDate}&endDate=${endDate}&page=${page}`).then(
+    fetch(`/api/${searchType}/?selectedField=${selectedField}&searchValue=${searchValue}&startDate=${startDate}&endDate=${endDate}&page=${page}`).then(
       response => response.json()
     ).then(
       data => {

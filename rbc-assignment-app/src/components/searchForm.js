@@ -14,9 +14,7 @@ export const SearchForm = (props) => {
 
 
 
-  const [input, setInput] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [password, setPassword] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const dateInputRef = useRef(null);
@@ -29,17 +27,17 @@ export const SearchForm = (props) => {
     if (!selectedField) {
       alert('You must select field type to search');
     }
-    else if (input.length === 0 || !selectedField || !startDate || !endDate) {
+    else if (searchValue.length === 0 || !selectedField || !startDate || !endDate) {
       alert('Please check empty fields');
     }
     else if (endDate < startDate) {
       alert('End date can not be before start date')
     }
-    else if (selectedField === 'phonenumber' && input.length > 12) {
+    else if (selectedField === 'phonenumber' && searchValue.length > 12) {
       alert('Please check phone number')
     }
     else {
-      props.callApi(new Date(startDate).getTime(), new Date(endDate).getTime(), selectedField, input);
+      props.callApi(new Date(startDate).getTime(), new Date(endDate).getTime(), selectedField, searchValue);
     }
 
   }
@@ -60,8 +58,8 @@ export const SearchForm = (props) => {
       <input
         type="text"
         name="input"
-        value={input}
-        onChange={e => setInput(e.target.value)}
+        value={searchValue}
+        onChange={e => setSearchValue(e.target.value)}
         placeholder={selectedField}
         required
       />
