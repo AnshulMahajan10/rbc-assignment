@@ -1,0 +1,72 @@
+[
+    {
+      "_id": "12345",
+      "originationTime": "1681430400000",
+      "clusterId": "domainserver",
+      "userId": "555666777",
+      "devices": {
+      "phone": "123123234234",
+      "voicemail": "555666777VM"
+    }
+  },
+  {
+    "_id": "12346",
+    "originationTime": "1681430400000",
+    "clusterId": "domainserver2",
+    "userId": "115666777",
+    "devices": {
+    "phone": "123123234235",
+    "voicemail": "555666777WVM"
+  }
+},
+  {
+    "_id": "12347",
+    "originationTime": "3656788800",
+    "clusterId": "domainserver3",
+    "userId": "555666777",
+    "devices": {
+    "phone": "123123234239",
+    "voicemail": "555666777ZVM"
+    }
+  },
+  {
+    "_id": "12348",
+    "originationTime": "1682035200000",
+    "clusterId": "domainserver2",
+    "userId": "115666777",
+    "devices": {
+    "phone": "123123234236",
+    "voicemail": "555666777WVM"
+  }
+},
+{
+  "_id": "12349",
+  "originationTime": "1682035200000",
+  "clusterId": "domainserver2",
+  "userId": "115666777",
+  "devices": {
+  "phone": "123123234237",
+  "voicemail": "555666777WVM"
+}
+},
+{
+  "_id": "12350",
+  "originationTime": "1682035200000",
+  "clusterId": "domainserver2",
+  "userId": "115666777",
+  "devices": {
+  "phone": "123123234238",
+  "voicemail": "555666777WVM"
+}
+},
+{
+  "_id": "12351",
+  "originationTime": "1682035200000",
+  "clusterId": "domainserver2",
+  "userId": "115666777",
+  "devices": {
+  "phone": "023123234238",
+  "voicemail": "555666777WVM"
+}
+}
+  ]

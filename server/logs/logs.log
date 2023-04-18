@@ -1,0 +1,24 @@
+info: Label: Apr-17-2023 19:33:17: Server started
+info: Label: Apr-17-2023 19:33:33: Server started
+info: Label: Apr-17-2023 19:34:12: Server started
+info: Label: Apr-17-2023 19:34:27: Server started
+info: Label: Apr-17-2023 19:35:24: Server started
+error: Label: Apr-17-2023 19:35:25: MongoServerError: bad auth : authentication failed
+info: Label: Apr-17-2023 19:36:42: Server started
+error: Label: Apr-17-2023 19:36:42: MongoServerError: bad auth : authentication failed
+info: Label: Apr-17-2023 19:37:22: Server started
+info: Label: Apr-17-2023 19:39:28: Server started
+error: Label: Apr-17-2023 19:40:05: [object Object]
+error: Label: Apr-17-2023 19:41:41: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}
+error: Label: Apr-17-2023 19:42:18: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}400 Error
+error: Label: Apr-17-2023 19:43:06: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}400 Error
+info: Label: Apr-17-2023 19:44:45: Mongo DB Connected
+info: Label: Apr-17-2023 19:47:44: Mongo DB Connected
+info: Label: Apr-17-2023 19:48:16: Mongo DB Connected
+info: Label: Apr-17-2023 19:49:13: Mongo DB Connected
+info: Label: Apr-17-2023 19:50:10: Mongo DB Connected
+info: Label: Apr-17-2023 19:50:19: Mongo DB Connected
+info: Label: Apr-17-2023 19:50:24: Mongo DB Connected
+error: Label: Apr-17-2023 19:51:15: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}400 Error
+error: Label: Apr-17-2023 19:53:26: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}400 Error
+error: Label: Apr-17-2023 21:25:15: {"selectedField":"phonenumber","searchValue":"123123234234","endDate":"1682640000000","page":"0"}400 Error
